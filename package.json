@@ -4,9 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
-    "build": "ng build",
+    "build": "ng build --prod",
+    "instalar-dependencias":"npm i",
+    "crear-componente":"ng g component componentes/login",
+    "crear-clase":"ng g class clases/Usuario",
+    "crear-interfaz":"ng g interface interfaces/Usuario",
+    "crear-servicio":"ng g service servicios/servicioLogin",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "backend": "json-server --watch ./src/app/data/db.json"
   },
   "private": true,
   "dependencies": {

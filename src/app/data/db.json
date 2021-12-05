@@ -1,0 +1,7 @@
+{
+    "usuario": [
+    {"id":1,"nombre":"jj","password":"1234","pedidos":null},
+    {"id":2,"nombre":"marcos","password":"1234","pedidos":null},
+    {"id":3,"nombre":"juan","password":"1234","pedidos":null},{"id":4,"nombre":"javier","password":"#######","pedidos":null}
+    ]
+}

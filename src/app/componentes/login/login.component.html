@@ -1,0 +1,19 @@
+<div class="login">
+  <form class="custom-form" [formGroup]="logints">
+    <h1>Login</h1>
+    <input
+      [(ngModel)]="user.nombre"
+      type="text"
+      formControlName="nombre"
+      placeholder="UserName"
+    />
+    <input
+      [(ngModel)]="user.password"
+      type="password"
+      formControlName="password"
+      placeholder="Password"
+    />
+    <h3>{{message}}</h3>
+    <button type="submit" (click)="accesoTienda()">Log in</button>
+  </form>
+</div>
