@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/clases/usuario';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-articulos',
@@ -8,11 +10,13 @@ import { Router } from '@angular/router';
 })
 export class ArticulosComponent implements OnInit {
 
-  constructor() {
+  constructor(private route:Router) {
 
-   }
-
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {
+    /*if(this.useLogeado.nombre === ''){
+      this.route.navigate(['**']);
+    }*/
+  } 
 }

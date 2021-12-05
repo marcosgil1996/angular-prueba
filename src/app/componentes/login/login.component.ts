@@ -11,14 +11,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
   user:Usuario = new Usuario();
+  
   logints:FormGroup;
   userValid:number = 0;
 
   message:string = '';
 
   constructor(private route:ActivatedRoute, private router:Router, formBuilder:FormBuilder, private servicio:ServicioLoginService) { 
+    
     this.logints=formBuilder.group(
       {
         "nombre":['',[
@@ -35,12 +36,17 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe(
+    this.user = new Usuario();
+    if(this.user.nombre===''){
+      console.log('USER NO LOGEADO');
+    }
+    console.log(this.user.nombre);
+    /*this.route.params.subscribe(
       parametros=>{
         console.log(parametros['parametro']);
       }
 
-    );
+    );*/
   }
 
 
@@ -70,7 +76,10 @@ export class LoginComponent implements OnInit {
       ()=>console.log('Llamada al servicio rest USUARIO finalizada')
     );
 
+    console.log(this.user);
+
     /*userValid == 1 ? this.message = 'CREDENCIALES CORRECTAAS'  : this.message = 'CREDENCAILES INCORRECTAS';
+      
       
     
     this.router.navigate(['/componentes/articulos']);*/
