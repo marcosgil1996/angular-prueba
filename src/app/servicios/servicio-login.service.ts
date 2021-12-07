@@ -14,7 +14,6 @@ export class ServicioLoginService {
       'Content-Type' : 'application/json'
     })
   }
-  
 
   datoService:string;
 
@@ -23,6 +22,6 @@ export class ServicioLoginService {
   }
 
   getUsuarios():Observable<Array<Usuario>>{
-    return this.http.get<Array<Usuario>>(environment.URL_BACK_LOGIN, this.httpOptions);
+    return this.http.get<Array<Usuario>>(environment.URL_BACK+"/usuarios", this.httpOptions);
   }
 }

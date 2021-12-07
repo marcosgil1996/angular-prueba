@@ -1,10 +1,11 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
-import { UnsubscriptionError } from 'rxjs';
+import { Component, OnInit} from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
+import { Articulo } from 'src/app/clases/articulo';
 import { Usuario } from 'src/app/clases/usuario';
-import { ServicioLoginService } from 'src/app/servicios/servicio-login.service';
+import { ServicioService } from 'src/app/servicios/servicio.service';
 import { TransfereServiceService } from 'src/app/servicios/transfere-service.service';
-import { LoginComponent } from '../login/login.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-articulos',
@@ -12,9 +13,22 @@ import { LoginComponent } from '../login/login.component';
   styleUrls: ['./articulos.component.css']
 })
 export class ArticulosComponent implements OnInit {
+  //Se pasan los datos de el usuario al la pagina principal
   datosUser:Usuario = this.transferService.getData(); 
-
-  constructor(private transferService:TransfereServiceService, private router:Router) {
+  
+  articulos:Array<Articulo> = new Array<Articulo>();
+  
+  constructor(private transferService:TransfereServiceService, private servicio:ServicioService,  private router:Router) {
+    
+    router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event) => {
+      //Filtra los eventos, de cuando tu router termino de hacer una navegación
+      const varUrl = environment.URL_BACK+"/"+"articulos";
+      console.log(varUrl);
+    });
+    
+    this.servicio = servicio;
     if(this.datosUser){
       console.log('LOGIN CORRECTO...');
       console.log(this.datosUser);
@@ -24,6 +38,18 @@ export class ArticulosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.obtenerArticulos();
   }
+
+  obtenerArticulos(){
+    //GET ARTICULOS
+    this.servicio.getArticulos().subscribe(
+    (articulos:Array<Articulo>)=>{
+      this.articulos=articulos;
+      console.log(this.articulos);
+    },
+    (error)=>console.log('error ',error),
+    ()=>console.log('Llamada al servicio res finalized'));
+  }
+
 }

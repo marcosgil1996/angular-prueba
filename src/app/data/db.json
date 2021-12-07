@@ -1,7 +1,55 @@
 {
-    "usuario": [
-    {"id":1,"nombre":"jj","password":"1234","pedidos":null},
-    {"id":2,"nombre":"marcos","password":"1234","pedidos":null},
-    {"id":3,"nombre":"juan","password":"1234","pedidos":null},{"id":4,"nombre":"javier","password":"#######","pedidos":null}
+    "usuarios": [
+        {   
+            "id":1,
+            "nombre":"jj",
+            "password":"1234",
+            "pedidos":null
+        },
+        {
+            "id":2,
+            "nombre":"marcos",
+            "password":"1234",
+            "pedidos":null
+        },
+        {
+            "id":3,
+            "nombre":"juan",
+            "password":"1234",
+            "pedidos":null
+        },
+        {
+            "id":4,
+            "nombre":"javier",
+            "password":"1234",
+            "pedidos":null
+        }
+    ],
+
+    "articulos":[
+        {
+            "id":1,
+            "name": "TV",
+            "precio": 300.0,
+            "stock": 10,
+            "description" : "Pantalla samsung TV",
+            "image": "https://images.philips.com/is/image/PhilipsConsumer/346B1C_00-IMS-es_ES?$jpglarge$&wid=960"
+        },
+        {
+            "id":2,
+            "name": "monitor",
+            "precio": 200.0,
+            "stock": 5,
+            "description" : "Monitor LG 34",
+            "image": "https://img.pccomponentes.com/articles/41/414013/1282-newskill-icarus-ic274k-4i-27-led-ips-ultrahd-4k-144hz-adaptative-sync.jpg"
+        },
+        {
+            "id":3,
+            "name": "teclado",
+            "precio": 200.0,
+            "stock": 10,
+            "description" : "Teclado Razer",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxkU7mzncoUdqgkKjk9kjwgmXQ_B3AjL1NUA&usqp=CAU"
+        }
     ]
 }

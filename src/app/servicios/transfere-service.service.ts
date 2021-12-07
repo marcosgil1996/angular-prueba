@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ServicioLoginService } from './servicio-login.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TransfereServiceService {
+export class TransfereServiceService{
 
   constructor(
     private router:Router,

@@ -83,6 +83,7 @@ export class LoginComponent implements OnInit {
         console.log(this.userLogin);
         if(this.userValid == 1){
           this.message = 'CREDENCIALES CORRECTAS';
+          
           this.transfereService.setData(this.userLogin);
           this.router.navigate(['/articulos']);
         }else{
@@ -94,8 +95,6 @@ export class LoginComponent implements OnInit {
     );
 
     
-    
-
     /*userValid == 1 ? this.message = 'CREDENCIALES CORRECTAAS'  : this.message = 'CREDENCAILES INCORRECTAS';
       
       

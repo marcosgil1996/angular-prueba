@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL_BACK_LOGIN: 'http://localhost:3000/usuario'
+  URL_BACK: 'http://localhost:3000'
 };
 
 /*

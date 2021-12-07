@@ -9,6 +9,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ServicioLoginService } from './servicios/servicio-login.service';
 import { PageNotFoundComponent } from './componentes/page-not-found/page-not-found.component';
+import { ServicioService } from './servicios/servicio.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { PageNotFoundComponent } from './componentes/page-not-found/page-not-fou
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [ServicioLoginService],
+  providers: [ServicioLoginService, ServicioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
