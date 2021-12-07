@@ -9,7 +9,7 @@
     "crear-componente":"ng g component componentes/PageNotFound",
     "crear-clase":"ng g class clases/Usuario",
     "crear-interfaz":"ng g interface interfaces/Usuario",
-    "crear-servicio":"ng g service servicios/servicioLogin",
+    "crear-servicio":"ng g service servicios/TransfereService",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "backend": "json-server --watch ./src/app/data/db.json"
