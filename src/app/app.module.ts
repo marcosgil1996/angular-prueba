@@ -28,4 +28,7 @@ import { ServicioService } from './servicios/servicio.service';
   providers: [ServicioLoginService, ServicioService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+
+}

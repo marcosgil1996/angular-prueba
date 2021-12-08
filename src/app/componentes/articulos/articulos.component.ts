@@ -15,11 +15,10 @@ import { environment } from 'src/environments/environment';
 export class ArticulosComponent implements OnInit {
   //Se pasan los datos de el usuario al la pagina principal
   datosUser:Usuario = this.transferService.getData(); 
-  
+
   articulos:Array<Articulo> = new Array<Articulo>();
-  
+
   constructor(private transferService:TransfereServiceService, private servicio:ServicioService,  private router:Router) {
-    
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event) => {
@@ -29,6 +28,8 @@ export class ArticulosComponent implements OnInit {
     });
     
     this.servicio = servicio;
+
+
     if(this.datosUser){
       console.log('LOGIN CORRECTO...');
       console.log(this.datosUser);
