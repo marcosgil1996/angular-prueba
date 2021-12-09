@@ -6,7 +6,7 @@
     "start": "ng serve --open",
     "build": "ng build --prod",
     "instalar-dependencias": "npm i",
-    "crear-componente": "ng g component componentes/PageNotFound",
+    "crear-componente": "ng g component componentes/editArticulo",
     "crear-clase": "ng g class clases/Usuario",
     "crear-interfaz": "ng g interface interfaces/Usuario",
     "crear-servicio": "ng g service servicios/TransfereService",

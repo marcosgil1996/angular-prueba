@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
-import { Articulo } from 'src/app/clases/articulo';
+import { Articulo, ArticuloDto } from 'src/app/clases/articulo';
 import { Usuario } from 'src/app/clases/usuario';
 import { ServicioService } from 'src/app/servicios/servicio.service';
 import { TransfereServiceService } from 'src/app/servicios/transfere-service.service';
@@ -17,15 +17,16 @@ export class ArticulosComponent implements OnInit {
   datosUser:Usuario = this.transferService.getData(); 
 
   articulos:Array<Articulo> = new Array<Articulo>();
+  artUpdate:Articulo = new Articulo();
 
   constructor(private transferService:TransfereServiceService, private servicio:ServicioService,  private router:Router) {
-    router.events.pipe(
+    /*router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event) => {
       //Filtra los eventos, de cuando tu router termino de hacer una navegación
       const varUrl = environment.URL_BACK+"/"+"articulos";
       console.log(varUrl);
-    });
+    });*/
     
     this.servicio = servicio;
 
@@ -51,6 +52,18 @@ export class ArticulosComponent implements OnInit {
     },
     (error)=>console.log('error ',error),
     ()=>console.log('Llamada al servicio res finalized'));
+  }
+
+  updateArticulo(idArticulo:number) {
+    
+    this.articulos.forEach(element => {
+      if(element.id == idArticulo){
+        this.artUpdate = element;
+      }
+    });
+    console.log('EDITAR ARTICULO -> \t '+JSON.stringify(this.artUpdate));
+    this.router.navigate(['updateArticulo/'+idArticulo]);
+    
   }
 
 }

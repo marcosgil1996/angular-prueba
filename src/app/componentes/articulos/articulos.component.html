@@ -1,5 +1,4 @@
 <h1>HOLA DE NUEVO {{datosUser.nombre}}</h1>
-
 <div class="container">
     <article class="item" *ngFor='let articulo of articulos'>
         <h2>{{articulo.name | uppercase}}</h2>
@@ -8,6 +7,6 @@
             <strong>DESCRIPCION: {{articulo.description}}</strong><br />
             <strong>STOCK: {{articulo.stock}}</strong>
         </details>
-        
+        <button (click) = "updateArticulo(articulo.id)">EDITAR PRODUCTO</button>
     </article>
 </div>

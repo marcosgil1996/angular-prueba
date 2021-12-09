@@ -24,7 +24,7 @@ export class ServicioService {
   getArticulos():Observable<Array<Articulo>>{
     return this.http.get<Array<Articulo>>(environment.URL_BACK+"/articulos");
   }
-
+  
   postArticulo(articulo:ArticuloDto):Observable<ArticuloDto>{
     return this.http.post<ArticuloDto>(environment.URL_BACK+"/articulos",articulo,this.httpOptions);
   }
@@ -32,7 +32,6 @@ export class ServicioService {
   putArticulo(articulo:ArticuloDto, idArticulo:number):Observable<ArticuloDto>{
     return this.http.put<Articulo>(environment.URL_BACK+"/articulos"+"/"+idArticulo,articulo,this.httpOptions);
   }
-
   
   deleleArticulo(idArticulo:number){
     return this.http.delete(environment.URL_BACK+"/articulos"+'/'+idArticulo,this.httpOptions);

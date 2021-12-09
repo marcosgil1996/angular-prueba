@@ -11,14 +11,9 @@ import { TransfereServiceService } from 'src/app/servicios/transfere-service.ser
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  propiedadesPadre:string;
-
-  outputHijo:string;
-  
+export class LoginComponent implements OnInit {  
   logints:FormGroup;
   userValid:number = 0;
-
   userLogin:Usuario = new Usuario();
 
 
@@ -28,9 +23,6 @@ export class LoginComponent implements OnInit {
               private router:Router, formBuilder:FormBuilder, 
               private servicio:ServicioLoginService, 
               private transfereService:TransfereServiceService) { 
-    
-      this.propiedadesPadre = '';
-      this.outputHijo = '';
       this.logints=formBuilder.group(
         {
           "nombre":['',[

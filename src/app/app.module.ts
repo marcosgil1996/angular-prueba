@@ -10,13 +10,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { ServicioLoginService } from './servicios/servicio-login.service';
 import { PageNotFoundComponent } from './componentes/page-not-found/page-not-found.component';
 import { ServicioService } from './servicios/servicio.service';
+import { EditArticuloComponent } from './componentes/edit-articulo/edit-articulo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticulosComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EditArticuloComponent
   ],
   imports: [
     BrowserModule,

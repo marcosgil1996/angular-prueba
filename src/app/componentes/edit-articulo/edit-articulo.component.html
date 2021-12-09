@@ -1,0 +1,14 @@
+<h1>FICHA DEL ARTICULO {{idArticulo}}</h1>
+<p>DATOS ACTUALES<br />
+NOMBRE -> {{articuloEdit.name}} <br />
+DESCRIPCION -> {{articuloEdit.description}}<br />
+STOCK -> {{articuloEdit.stock}} <br />
+
+
+<label for=""> NOMBRE ARTICULO: </label>
+<input type="text" [(ngModel)]="art.name" required />
+<label for=""> DESCRIPCION ARTICULO: </label>
+<input type="text" [(ngModel)]="art.description" />
+<label for=""> STOCK: </label>
+<input type="number" [(ngModel)]="art.stock" />
+<button (click)="editarInformacion()">EDITAR INFORMACIÓN</button>
